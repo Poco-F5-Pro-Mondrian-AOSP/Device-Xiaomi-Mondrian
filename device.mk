@@ -23,7 +23,7 @@ PRODUCT_PACKAGES += \
     SystemUIResMondrian \
     WifiResMondrian
 
-# Shim for miui camera 
+# Shim for miui camera
 PRODUCT_PACKAGES += \
     libgui_shim_miuicamera
 
@@ -54,6 +54,10 @@ endif
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
+
+# Remove unwanted packages
+PRODUCT_PACKAGES += \
+    RemovePackages
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
