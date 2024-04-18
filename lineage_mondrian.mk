@@ -6,16 +6,24 @@
 
 # Inherit from mondrian device
 $(call inherit-product, device/xiaomi/mondrian/device.mk)
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+TARGET_DISABLE_EPPE := true
 
-# Inherit from common Evolution X configuration
-BUILD_WITH_GAPPS := true
+#GAPPS
+WITH_GMS := true
+
+# Matrixx
+MATRIXX_MAINTAINER := AleeZT
+MATRIXX_CHIPSET := SM8475
+MATRIXX_BATTERY := 5160mAh
+MATRIXX_DISPLAY := 1440x3200
 TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_BUILD_APERTURE_CAMERA := false
-TARGET_SUPPORTS_QUICK_TAP := true
-$(call inherit-product, vendor/evolution/config/common_full_phone.mk)
+TARGET_EXCLUDES_AUDIOFX := true
+TARGET_HAS_UDFPS := true
+EXTRA_UDFPS_ANIMATIONS := true
 
 ## Device identifier
-PRODUCT_NAME := evolution_mondrian
+PRODUCT_NAME := lineage_mondrian
 PRODUCT_DEVICE := mondrian
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_BRAND := POCO
